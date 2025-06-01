@@ -43,7 +43,7 @@ const TradeAnywhere = () => {
           Trade Anytime, <span className="text-[#a35ca2]">Anywhere</span>
         </h1>
       </div>
-      <div className="absolute inset-0 flex justify-center items-center z-0 ">
+      <div className="absolute inset-0 md:flex hidden justify-center items-center z-0 ">
         <Tilt
           glareEnable={true}
           glareMaxOpacity={0.2}
