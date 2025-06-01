@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import Tilt from "react-parallax-tilt";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,18 +44,31 @@ const TradeAnywhere = () => {
         </h1>
       </div>
       <div className="absolute inset-0 flex justify-center items-center z-0 ">
-        <div className="rounded-[15px] p-4 bg-[#0a0b17]">
-          <div className="bg-white">
+        <Tilt
+          glareEnable={true}
+          glareMaxOpacity={0.2}
+          scale={1.1}
+          transitionSpeed={250}
+          className="rounded-[15px] p-3 bg-[#0a0b17] rotate-[1deg]">
+          <div className="bg-white rounded-[24px]">
             <Image
               src="/qr.png"
               alt="QR Code"
-              width={200}
-              height={200}
+              width={230}
+              height={220}
               className=""
             />
           </div>
-        </div>
+        </Tilt>
       </div>
+
+      <Image
+        src="/AvailableOn.png"
+        height={75}
+        width={125}
+        alt="Available on App store and Google Plkay Store"
+        className="absolute bottom-8 mx-auto left-1/2 transform -translate-x-1/2"
+      />
     </section>
   );
 };
