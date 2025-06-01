@@ -17,7 +17,7 @@ const TitleBanner = ({ className, label, headingStart, highlight, headingEnd, de
         "p-0 flex flex-col items-center justify-center gap-[5px]",
         className
       )}>
-      <div className="backdrop-blur-md rounded-[20px] opacity-100 bg-white/5 px-[39px] py-2.5 border border-white/10 text-sm text-[#9f8bcf] box-border">
+      <div className="backdrop-blur-md rounded-[20px] opacity-100 bg-[#ffffff02] px-[39px] py-2.5 border border-white/10 text-sm text-[#9f8bcf] box-border">
         <span className="leading-none">{label}</span>
       </div>
       <h1 className="text-[58px] text-white text-center">
