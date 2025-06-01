@@ -125,3 +125,14 @@
 .blank{
   @apply min-h-[385px] pb-32 max-w-[610px] flex-1 hidden lg:flex
 }
+
+@font-face {
+  font-family: 'Helvetica';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Helvetica'), url('/Helvetica.woff') format('woff');
+}
+
+.helvetica {
+  font-family: 'Helvetica', Arial, sans-serif;
+}

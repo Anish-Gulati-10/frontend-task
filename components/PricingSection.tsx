@@ -2,10 +2,11 @@ import React from "react";
 import TitleBanner from "./TitleBanner";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { BorderBeam } from "./ui/border-beam";
 
 const PricingSection = () => {
   return (
-    <section className="flex flex-col justify-center items-center w-full gap-[50px] bg-[#060710] ">
+    <section className="flex flex-col justify-center items-center w-full gap-[50px] bg-[#060710] pb-[30px] ">
       <TitleBanner
         label="Compare Plans"
         headingStart="Compare your"
@@ -45,22 +46,23 @@ const PricingSection = () => {
 
         {Plans.map((plan, index)=>{
             return (
-                <div key={index} className={`text-center border border-white/10 rounded-[15px] md:w-[350px] w-fit bg-[linear-gradient(156deg,_#3811387d,_#000_72%)] py-[30px] px-[25px] flex flex-col gap-[30px]`}>
-                    <h3 className="text-[30px] font-semibold bg-gradient-to-r from-white to-white/40 bg-clip-text text-transparent ">{plan.title}</h3>
-                    <div className="text-sm text-white flex flex-col gap-[15px] justify-center items-center">
-                        <p>{plan.subtitle}</p>
-                        {plan.data.map((item) => (
-                            <>
-                                <div className="bg-[linear-gradient(270deg,_#000,_#736496_53%,_#000)] w-full h-px"/>
-                                <p className="max-w-[144px]">{item}</p>
-                            </>
-                        ))}
-                    </div>
-                    <Link href="#" className="mt-auto">
-                        <Button className="!px-[25px] !py-2.5 text-base text-white bg-[#6142a5] hover:bg-[#6142a5d7] relative overflow-hidden">
-                            Start Trading
-                        </Button>
-                    </Link>
+                <div key={index} className={`relative text-center border border-white/10 rounded-[15px] md:w-[350px] w-fit py-[30px] px-[25px] flex flex-col gap-[30px] ${index === 1 ? "" : "bg-[linear-gradient(156deg,_#3811387d,_#000_72%)]"}`}>
+                  <h3 className="text-[30px] font-semibold bg-gradient-to-r from-white to-white/40 bg-clip-text text-transparent ">{plan.title}</h3>
+                  <div className="text-sm text-white flex flex-col gap-[15px] justify-center items-center">
+                      <p>{plan.subtitle}</p>
+                      {plan.data.map((item) => (
+                          <>
+                              <div className="bg-[linear-gradient(270deg,_#000,_#736496_53%,_#000)] w-full h-px"/>
+                              <p className="max-w-[144px]">{item}</p>
+                          </>
+                      ))}
+                  </div>
+                  <Link href="#" className="mt-auto">
+                      <Button className="!px-[25px] !py-2.5 text-base text-white bg-[#6142a5] hover:bg-[#6142a5d7] relative overflow-hidden">
+                          Start Trading
+                      </Button>
+                  </Link>
+                  {index ===1 && <BorderBeam size={200}/>}
                 </div>
             )
         })}
