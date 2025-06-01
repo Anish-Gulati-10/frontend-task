@@ -121,3 +121,7 @@
     font-family: var(--font-manrope);
   }
 }
+
+.blank{
+  @apply min-h-[385px] pb-32 max-w-[610px] flex-1 hidden lg:flex
+}
